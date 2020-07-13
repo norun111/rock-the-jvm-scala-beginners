@@ -26,6 +26,28 @@ class Person(name: String, val age: Int) {
   //multiple constructor
   def this(name: String) = this(name, 0)
   def this() = this("John Doe")
+
+  /*
+  Novel and a Writer
+
+  Writer: first name, surname, year
+   - method fullname
+
+  Novel: name, year of release, author
+  - authorAge
+  - isWrittenBy(author)
+  - copy (new year of release) = new instance of Novel
+
+
+   */
+
+  /*
+  Counter class
+    - receives an int value
+    - method current count
+    - method to increment/decrement => new Counter
+    - overload inc/dec to receive an amount
+   */
 }
 
 //class parameters are NOT FIELDS
