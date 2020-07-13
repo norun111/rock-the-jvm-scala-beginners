@@ -19,7 +19,7 @@ object MethodNotations extends App {
   val mary = new Person("Mary", "Inception")
   println(mary.likes("Inception"))
   println(mary likes "Inception") // equivalent
-  // infix notation = operator notation (syntax suger)
+  // infix notation = operator notation (syntax sugar)
 
   // "operators" in Scala
 
