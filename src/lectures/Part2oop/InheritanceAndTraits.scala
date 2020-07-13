@@ -3,9 +3,9 @@ package lectures.Part2oop
 object InheritanceAndTraits extends App{
 
   //single class inheritance
-  class Animal {
+   sealed class Animal {
     val creatureType = "wild"
-    protected def eat = println("nomnom")
+    def eat = println("nomnom")
   }
   class Cat extends Animal {
     def crunch = {
@@ -35,7 +35,10 @@ object InheritanceAndTraits extends App{
 
   class Dog(dogType: String) extends Animal {
     override val creatureType: String = dogType
-    override def eat = println("crunch crunch")
+    override def eat = {
+      super.eat
+      println("crunch crunch")
+    }
   }
 
   val dog = new Dog("K9")
@@ -44,7 +47,14 @@ object InheritanceAndTraits extends App{
 
   // type substitution
   val unknownAnimal = new Dog("K9")
-
   unknownAnimal.eat
 
+  // overRIDING VS overLOADING
+
+  // SUPER
+
+  // preventing overrides
+  // 1. - use final on member
+  // 2. - use final on the entire class
+  // 3. - seal the class = extend classes in THIS FILE, prevent extension in other files
 }
