@@ -6,7 +6,15 @@ object OOBasics extends App {
   println(person.x)
   person.greet("Daniel")
   person.greet()
+
+  val author = new Author("Charles", "Dickens", 1812)
+  val novel = new Novel("Great Expectations", 1861, author)
+  
+  println(novel.authorAge)
+  println(novel.isWrittenBy(author))
 }
+
+
 // constructor
 class Person(name: String, val age: Int) {
   //body
@@ -26,12 +34,12 @@ class Person(name: String, val age: Int) {
   //multiple constructor
   def this(name: String) = this(name, 0)
   def this() = this("John Doe")
-
+}
   /*
-  Novel and a Writer
+  Novel and a Author
 
-  Writer: first name, surname, year
-   - method fullname
+  Author: first name, surname, year
+   - method fullName
 
   Novel: name, year of release, author
   - authorAge
@@ -41,6 +49,17 @@ class Person(name: String, val age: Int) {
 
    */
 
+  class Author(firstName: String, surname: String, val year: Int) {
+    def fullName(): String = firstName + " " + surname
+
+  }
+
+  class Novel(name: String, year: Int, author: Author) {
+    def authorAge = year - author.year
+    def isWrittenBy(author: Author) = author == this.author
+    def copy(newYear: Int): Novel = new Novel(name, newYear, author)
+  }
+
   /*
   Counter class
     - receives an int value
@@ -48,6 +67,6 @@ class Person(name: String, val age: Int) {
     - method to increment/decrement => new Counter
     - overload inc/dec to receive an amount
    */
-}
+
 
 //class parameters are NOT FIELDS
