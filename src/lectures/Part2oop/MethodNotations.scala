@@ -10,7 +10,7 @@ object MethodNotations extends App {
     def unary_+ : Person = new Person(name, favouriteMovie, age + 1)
     def isAlive: Boolean = true
     def apply(): String = s"Hi, my name is $name and I like $favouriteMovie"
-
+    def apply(n: Int): String = s"$name watched $n times"
     def learns(thing: String) = s"$name is learning $thing"
     def learnsScala = this learns "Scala"
 //    def learnsScala = this.learns("Scala") //Same
@@ -65,4 +65,6 @@ object MethodNotations extends App {
   println((mary + "the Rockstar").apply())
   println((+mary).age)
   println(mary learnsScala)
+
+  println(mary(10))
 }
