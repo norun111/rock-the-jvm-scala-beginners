@@ -48,7 +48,7 @@ object Generics extends App {
 
   class Car
   // generic type need proper bounded type
-//  val newCage = new Cage(new Car)
+  //  val newCage = new Cage(new Car)
 
   // expand MyList to be generics
 }
