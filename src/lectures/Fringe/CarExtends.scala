@@ -1,0 +1,25 @@
+//package lectures.Fringe
+
+object CarExtends {
+
+  def main(args: Array[String]): Unit = {
+    var car = new Car("blue")
+    output(car)
+    car.run
+
+    var truck = new Truck("Silver")
+    output(truck)
+    truck.run
+
+  }
+
+  def output(car: Car):Unit = println("Color is " + car.color)
+}
+
+class Car(val color: String) {
+  def run = println("Run")
+}
+
+class Truck(color: String) extends Car(color) {
+  override def run: Unit = println("Truck Start")
+}
